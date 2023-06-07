@@ -79,11 +79,16 @@ export class Database {
     if (rowIndex > -1) {
       const data = this.#database[table][rowIndex];
       const date = new Date();
+      let completeAt = new Date();
+
+      if (data.completed_at) {
+        completeAt = null;
+      }
 
       this.#database[table][rowIndex] = {
         id,
         ...data,
-        completed_at: date,
+        completed_at: completeAt,
         updated_at: date,
       };
       this.#persist();
