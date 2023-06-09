@@ -2,9 +2,6 @@ import http from 'node:http';
 import { json } from './middleware/json.js';
 import { routes } from './routes.js';
 import { extractQueryParams } from './utils/extract-query-params.js';
-import 'dotenv/config.js';
-
-let PORT = process.env.PORT || 3332;
 
 const server = http.createServer(async (request, response) => {
   await json(request, response);
@@ -28,7 +25,6 @@ const server = http.createServer(async (request, response) => {
 
 server.listen(3332);
 
-export default server;
 //criar servidor, adicionar porta no listen do servidor
 //adicionar middleware de json ou qualquer outro formato
 //procurar uma rota com base nos dados de method e url da requisicao e se essa rota existir, chamar a funcao handler dela para que seja executada
