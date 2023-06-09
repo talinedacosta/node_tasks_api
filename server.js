@@ -2,6 +2,9 @@ import http from 'node:http';
 import { json } from './middleware/json.js';
 import { routes } from './routes.js';
 import { extractQueryParams } from './utils/extract-query-params.js';
+import 'dotenv/config.js';
+
+let PORT = process.env.PORT || 3332;
 
 const server = http.createServer(async (request, response) => {
   await json(request, response);
