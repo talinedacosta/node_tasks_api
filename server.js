@@ -28,6 +28,7 @@ const server = http.createServer(async (request, response) => {
 
 server.listen(3332);
 
+export default server;
 //criar servidor, adicionar porta no listen do servidor
 //adicionar middleware de json ou qualquer outro formato
 //procurar uma rota com base nos dados de method e url da requisicao e se essa rota existir, chamar a funcao handler dela para que seja executada
